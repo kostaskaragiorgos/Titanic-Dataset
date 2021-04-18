@@ -46,7 +46,12 @@ class Titanicsurvival():
         pass
 
     def closefile(self):
-        pass
+        if not ".csv" in self.filename:
+            msg.showerror("ERROR", "NO CSV TO CLOSE")
+        else:
+            self.filename = ""
+            msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
+
 
 
 def main():
