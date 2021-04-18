@@ -43,7 +43,10 @@ class Titanicsurvival():
         pass
 
     def insertfile(self):
-        pass
+        if ".csv" in self.filename:
+            msg.showerror("ERROR", "A CSV FILE IS ALREADY OPEN")
+        else:
+            pass
 
     def closefile(self):
         if not ".csv" in self.filename:
