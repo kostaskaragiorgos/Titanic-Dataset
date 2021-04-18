@@ -13,6 +13,7 @@ class Titanicsurvival():
         
         self.file_menu = Menu(self.menu,tearoff = 0)
         self.file_menu.add_command(label="Insert a csv", accelerator='Ctrl+O', command = self.insertfile)
+        self.file_menu.add_command(label="Close file", accelerator='Ctrl+F4', command=self.closefile)
         self.file_menu.add_command(label="Exit",accelerator= 'Alt+F4',command = self.exitmenu)
         self.menu.add_cascade(label = "File",menu=self.file_menu)
         
@@ -29,6 +30,7 @@ class Titanicsurvival():
         self.master.bind('<Control-F1>',lambda event: self.helpmenu())
         self.master.bind('<Control-i>',lambda event: self.aboutmenu())
         self.master.bind('<Control-o>', lambda event: self.insertfile())
+        self.master.bind('<Control-F4>', lambda evemt: self.closefile())
 
     def exitmenu(self):
         if msg.askokcancel("Quit?", "Really quit?"):
@@ -42,6 +44,10 @@ class Titanicsurvival():
 
     def insertfile(self):
         pass
+
+    def closefile(self):
+        pass
+
 
 def main():
     root=Tk()
