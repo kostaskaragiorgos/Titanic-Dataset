@@ -1,5 +1,8 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk
 
+def aboutmenu():
+    """ about menu function """
+    msg.showinfo("About", "Titanic survival \nVersion 1.0")
 
 class Titanicsurvival():
     def __init__(self,master):
@@ -18,7 +21,7 @@ class Titanicsurvival():
         self.menu.add_cascade(label = "File",menu=self.file_menu)
         
         self.about_menu = Menu(self.menu,tearoff = 0)
-        self.about_menu.add_command(label = "About",accelerator= 'Ctrl+I',command=self.aboutmenu)
+        self.about_menu.add_command(label = "About",accelerator= 'Ctrl+I',command= aboutmenu)
         self.menu.add_cascade(label="About",menu=self.about_menu)
         
         self.help_menu = Menu(self.menu,tearoff = 0)
@@ -28,7 +31,7 @@ class Titanicsurvival():
         self.master.config(menu=self.menu)
         self.master.bind('<Alt-F4>',lambda event: self.exitmenu())
         self.master.bind('<Control-F1>',lambda event: self.helpmenu())
-        self.master.bind('<Control-i>',lambda event: self.aboutmenu())
+        self.master.bind('<Control-i>',lambda event: aboutmenu())
         self.master.bind('<Control-o>', lambda event: self.insertfile())
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
 
@@ -37,9 +40,6 @@ class Titanicsurvival():
             self.master.destroy()
     
     def helpmenu(self):
-        pass
-    
-    def aboutmenu(self):
         pass
 
     def insertfile(self):
