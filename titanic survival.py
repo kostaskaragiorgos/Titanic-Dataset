@@ -20,7 +20,7 @@ class Titanicsurvival():
         self.predictbutton = Button(self.master, text="PREDICT", command=self.predict)
         self.predictbutton.pack()
 
-        self.clearbutton = Button(self.master, text="CLEAR")
+        self.clearbutton = Button(self.master, text="CLEAR", command=self.clear)
         self.clearbutton.pack()
 
         self.menu = Menu(self.master)
@@ -70,6 +70,8 @@ class Titanicsurvival():
     def predict(self):
         pass
 
+    def clear(self):
+        pass
 
 def main():
     root=Tk()
