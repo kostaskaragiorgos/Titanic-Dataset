@@ -1,4 +1,4 @@
-from tkinter import Menu, messagebox as msg, filedialog, Tk
+from tkinter import Menu, messagebox as msg, filedialog, Tk, Label
 
 def aboutmenu():
     """ about menu function """
@@ -11,6 +11,9 @@ class Titanicsurvival():
         self.master.geometry("250x200")
         self.master.resizable(False, False)
         self.filename = ""
+        
+        self.leb = Label(self.master, text="Enter age")
+        self.leb.pack()
         
         self.menu = Menu(self.master)
         
