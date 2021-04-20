@@ -1,4 +1,4 @@
-from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text
+from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button
 
 def aboutmenu():
     """ about menu function """
@@ -16,6 +16,9 @@ class Titanicsurvival():
         self.ageleb.pack()
         self.agetext = Text(self.master, height=1, width=3)
         self.agetext.pack()
+
+        self.predictbutton = Button(self.master, text="PREDICT", command=self.predict)
+        self.predictbutton.pack()
 
         self.menu = Menu(self.master)
         
@@ -60,7 +63,10 @@ class Titanicsurvival():
             self.filename = ""
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
 
-
+    
+    def predict(self):
+        pass
+    
 
 def main():
     root=Tk()
