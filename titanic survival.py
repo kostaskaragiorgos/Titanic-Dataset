@@ -82,7 +82,9 @@ class Titanicsurvival():
                                                        filetypes=(("csv files", "*.csv"),
                                                                   ("all files", "*.*")))
             self.file_input_validation()
+            
     def closefile(self):
+        """ closes the csv file """
         if not ".csv" in self.filename:
             msg.showerror("ERROR", "NO CSV TO CLOSE")
         else:
