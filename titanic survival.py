@@ -1,4 +1,4 @@
-from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button
+from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button, END
 import pandas as pd
 
 
@@ -82,7 +82,7 @@ class Titanicsurvival():
                                                        filetypes=(("csv files", "*.csv"),
                                                                   ("all files", "*.*")))
             self.file_input_validation()
-            
+
     def closefile(self):
         """ closes the csv file """
         if not ".csv" in self.filename:
@@ -96,7 +96,7 @@ class Titanicsurvival():
         pass
 
     def clear(self):
-        pass
+        self.agetext.delete(1.0, END)
 
 def main():
     root=Tk()
