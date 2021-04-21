@@ -13,9 +13,16 @@ class Titanicsurvival():
         self.master.geometry("250x200")
         self.master.resizable(False, False)
         self.filename = ""
+
+        self.nameleb = Label(self.master, text="Enter name")
+        self.nameleb.pack()
         
+        self.nametext = Text(self.master, height=1)
+        self.nametext.pack()
+
         self.ageleb = Label(self.master, text="Enter age")
         self.ageleb.pack()
+
         self.agetext = Text(self.master, height=1, width=3)
         self.agetext.pack()
 
@@ -52,7 +59,7 @@ class Titanicsurvival():
 
     def check_columns(self):
         """ checks the columns name from the importrd .csv file """
-        if all([item in self.df.columns for item in ['PassengerId','Survived','Pclass','Name','Sex','Age','SibSp','Parch','Ticket','Fare','Cabin','Embarked']]):
+        if all([item in self.df.columns for item in ['PassengerId','Pclass','Name','Sex','Age','SibSp','Parch','Ticket','Fare','Cabin','Embarked']]):
             msg.showinfo("SUCCESS", "CSV FILE ADDED SUCCESSFULLY")
         else:
             self.filename = ""
