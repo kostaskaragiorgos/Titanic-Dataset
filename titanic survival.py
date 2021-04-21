@@ -1,4 +1,6 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button
+import pandas as pd
+
 
 def aboutmenu():
     """ about menu function """
@@ -46,6 +48,15 @@ class Titanicsurvival():
         self.master.bind('<Control-o>', lambda event: self.insertfile())
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
 
+    
+
+    def check_columns(self):
+        if all([item in self.df.columns for item in ['PassengerId','Survived','Pclass','Name','Sex','Age','SibSp','Parch','Ticket','Fare','Cabin','Embarked']]):
+            msg.showinfo("SUCCESS", "CSV FILE ADDED SUCCESSFULLY")
+        else:
+            self.filename = ""
+            msg.showerror("ERROR", "NO PROPER CSV ")
+
     def exitmenu(self):
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
@@ -57,7 +68,15 @@ class Titanicsurvival():
         if ".csv" in self.filename:
             msg.showerror("ERROR", "A CSV FILE IS ALREADY OPEN")
         else:
-            pass
+            self.filename = filedialog.askopenfilename(initialdir="/", title="Select csv file",
+                                                       filetypes=(("csv files", "*.csv"),
+                                                                  ("all files", "*.*")))
+            if ".csv" in self.filename:
+                self.df = pd.read_csv(self.filename)
+                self.check_columns()
+            else:
+                self.filename = ""
+                msg.showerror("ERROR", "NO CSV IMPORTED")
 
     def closefile(self):
         if not ".csv" in self.filename:
