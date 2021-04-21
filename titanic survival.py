@@ -29,7 +29,8 @@ class Titanicsurvival():
         self.fareleb = Label(self.master, text="Enter fare")
         self.fareleb.pack()
 
-        
+        self.faretext = Text(self.master, height=1, width=7)
+        self.faretext.pack()
 
         self.predictbutton = Button(self.master, text="PREDICT", command=self.predict)
         self.predictbutton.pack()
