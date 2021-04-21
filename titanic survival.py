@@ -51,6 +51,7 @@ class Titanicsurvival():
     
 
     def check_columns(self):
+        """ checks the columns name from the importrd .csv file """
         if all([item in self.df.columns for item in ['PassengerId','Survived','Pclass','Name','Sex','Age','SibSp','Parch','Ticket','Fare','Cabin','Embarked']]):
             msg.showinfo("SUCCESS", "CSV FILE ADDED SUCCESSFULLY")
         else:
@@ -64,6 +65,15 @@ class Titanicsurvival():
     def helpmenu(self):
         pass
 
+    def file_input_validation(self):
+        """ user input validation"""
+        if ".csv" in self.filename:
+            self.df = pd.read_csv(self.filename)
+            self.check_columns()
+        else:
+            self.filename = ""
+            msg.showerror("ERROR", "NO CSV IMPORTED")
+
     def insertfile(self):
         if ".csv" in self.filename:
             msg.showerror("ERROR", "A CSV FILE IS ALREADY OPEN")
@@ -71,13 +81,7 @@ class Titanicsurvival():
             self.filename = filedialog.askopenfilename(initialdir="/", title="Select csv file",
                                                        filetypes=(("csv files", "*.csv"),
                                                                   ("all files", "*.*")))
-            if ".csv" in self.filename:
-                self.df = pd.read_csv(self.filename)
-                self.check_columns()
-            else:
-                self.filename = ""
-                msg.showerror("ERROR", "NO CSV IMPORTED")
-
+            self.file_input_validation()
     def closefile(self):
         if not ".csv" in self.filename:
             msg.showerror("ERROR", "NO CSV TO CLOSE")
