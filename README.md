@@ -32,7 +32,9 @@
 
 
 # Documentation
-.
+
+All project documentation is located in the `./doc`  folder.
+
 
 # Radon
 
