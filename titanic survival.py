@@ -104,6 +104,7 @@ class Titanicsurvival():
 
     def clear(self):
         self.agetext.delete(1.0, END)
+        self.nametext.delete(1.0, END)
 
 def main():
     root=Tk()
