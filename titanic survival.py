@@ -103,6 +103,7 @@ class Titanicsurvival():
             msg.showerror("ERROR", "NO PROPER CSV ")
 
     def exitmenu(self):
+        """ exit menu function """
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
     
