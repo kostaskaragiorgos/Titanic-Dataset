@@ -60,6 +60,7 @@ All project documentation is located in the `./doc`  folder.
 
 ### Radon_cc
 
+<p><img src = "images/radon cc.png" title = "Titanic Survival Radon CC"/></p>
 
 ### Radon_hal
 
