@@ -145,6 +145,7 @@ class Titanicsurvival():
         self.faretext.delete(1.0, END)
         self.pclassstring.set("Select a Ticket class")
         self.sexstring.set("Select a Sex")
+        self.embarkedstring.set("Select a Port of Embarkation")
         self.noffammebtext.delete(1.0, END)
         self.nofparentstext.delete(1.0, END)
 
