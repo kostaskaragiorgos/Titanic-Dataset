@@ -120,6 +120,7 @@ class Titanicsurvival():
             msg.showerror("ERROR", "NO CSV IMPORTED")
 
     def insertfile(self):
+        """ insert csv function """
         if ".csv" in self.filename:
             msg.showerror("ERROR", "A CSV FILE IS ALREADY OPEN")
         else:
@@ -141,6 +142,7 @@ class Titanicsurvival():
         pass
 
     def clear(self):
+        """ reset button function """
         self.agetext.delete(1.0, END)
         self.nametext.delete(1.0, END)
         self.faretext.delete(1.0, END)
