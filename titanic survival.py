@@ -97,6 +97,7 @@ class Titanicsurvival():
     def check_columns(self):
         """ checks the columns name from the importrd .csv file """
         if all([item in self.df.columns for item in ['PassengerId','Pclass','Name','Sex','Age','SibSp','Parch','Ticket','Fare','Cabin','Embarked']]):
+            self.statechange("disable")
             msg.showinfo("SUCCESS", "CSV FILE ADDED SUCCESSFULLY")
         else:
             self.filename = ""
@@ -109,6 +110,17 @@ class Titanicsurvival():
     
     def helpmenu(self):
         pass
+
+    def statechange(self, state):
+            self.agetext.config(state=state)
+            self.nametext.config(state=state)
+            self.faretext.config(state=state)
+            self.sexpopup.config(state=state)
+            self.pclasspopup.config(state=state)
+            self.embarkedpopup.config(state=state)
+            self.noffammebtext.config(state=state)
+            self.nofparentstext.config(state=state)
+
 
     def file_input_validation(self):
         """ user input validation"""
@@ -128,14 +140,7 @@ class Titanicsurvival():
                                                        filetypes=(("csv files", "*.csv"),
                                                                   ("all files", "*.*")))
             self.file_input_validation()
-            self.agetext.config(state="disable")
-            self.nametext.config(state="disable")
-            self.faretext.config(state="disable")
-            self.sexpopup.config(state="disable")
-            self.pclasspopup.config(state="disable")
-            self.embarkedpopup.config(state="disable")
-            self.noffammebtext.config(state="disable")
-            self.nofparentstext.config(state="disable")
+            
 
     def closefile(self):
         """ closes the csv file """
