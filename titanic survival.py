@@ -26,11 +26,18 @@ class Titanicsurvival():
         self.agetext = Text(self.master, height=1, width=3)
         self.agetext.pack()
 
-        self.nofsiblleb = Label(self.master, text="Enter the number of siblings")
+        self.nofsiblleb = Label(self.master, text="Enter the number of Siblings/Spouses")
         self.nofsiblleb.pack()
+        
+        
+        self.nofparentstext = Text(self.master, height=1, width=3)
+        self.nofparentstext.pack()
 
-        self.nofsibltext = Text(self.master, height=1, width=3)
-        self.nofsibltext.pack()
+        self.noffammebleb = Label(self.master, text="Enter the number of Parents/Children")
+        self.noffammebleb.pack()
+
+        self.noffammebtext = Text(self.master, height=1, width=3)
+        self.noffammebtext.pack()
 
         self.fareleb = Label(self.master, text="Enter fare")
         self.fareleb.pack()
