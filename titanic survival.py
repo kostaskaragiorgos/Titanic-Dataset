@@ -128,6 +128,14 @@ class Titanicsurvival():
                                                        filetypes=(("csv files", "*.csv"),
                                                                   ("all files", "*.*")))
             self.file_input_validation()
+            self.agetext.config(state="disable")
+            self.nametext.config(state="disable")
+            self.faretext.config(state="disable")
+            self.sexpopup.config(state="disable")
+            self.pclasspopup.config(state="disable")
+            self.embarkedpopup.config(state="disable")
+            self.noffammebtext.config(state="disable")
+            self.nofparentstext.config(state="disable")
 
     def closefile(self):
         """ closes the csv file """
