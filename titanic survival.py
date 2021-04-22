@@ -10,7 +10,7 @@ class Titanicsurvival():
     def __init__(self,master):
         self.master = master
         self.master.title("Titanic Survival")
-        self.master.geometry("300x300")
+        self.master.geometry("300x350")
         self.master.resizable(False, False)
         self.filename = ""
 
@@ -57,7 +57,11 @@ class Titanicsurvival():
         self.pclasspopup = OptionMenu(self.master, self.pclassstring, *self.pclasslist)
         self.pclasspopup.pack()
 
-
+        self.embarkedlist = ["C", "Q", "S"]
+        self.embarkedstring = StringVar(master)
+        self.embarkedstring.set("Select a Port of Embarkation")
+        self.embarkedpopup = OptionMenu(self.master, self.embarkedstring, *self.embarkedlist)
+        self.embarkedpopup.pack()
 
         self.predictbutton = Button(self.master, text="PREDICT", command=self.predict)
         self.predictbutton.pack()
