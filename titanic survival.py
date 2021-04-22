@@ -134,6 +134,7 @@ class Titanicsurvival():
         self.faretext.delete(1.0, END)
         self.pclassstring.set("Select a Ticket class")
         self.sexstring.set("Select a Sex")
+        self.nofsibltext.delete(1.0, END)
 
 def main():
     root=Tk()
