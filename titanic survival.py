@@ -1,4 +1,4 @@
-from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button, END
+from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button, END, StringVar, OptionMenu
 import pandas as pd
 
 
@@ -31,6 +31,12 @@ class Titanicsurvival():
 
         self.faretext = Text(self.master, height=1, width=7)
         self.faretext.pack()
+
+        self.sexlist = ["Male", "Female"]
+        self.sexstring = StringVar(master)
+        self.sexstring.set("Select a Sex")
+        self.sexpopup = OptionMenu(self.master, self.sexstring, *self.sexlist)
+        self.sexpopup.pack()
 
         self.predictbutton = Button(self.master, text="PREDICT", command=self.predict)
         self.predictbutton.pack()
