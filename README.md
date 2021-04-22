@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 # Current_Version
 
-
+<p><img src ="images/Titanic Survival Version.png" title = "Titanic Survival Version"/> </p>
 
 # Documentation
 
