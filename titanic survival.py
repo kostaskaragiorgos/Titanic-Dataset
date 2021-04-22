@@ -147,14 +147,7 @@ class Titanicsurvival():
         if not ".csv" in self.filename:
             msg.showerror("ERROR", "NO CSV TO CLOSE")
         else:
-            self.agetext.config(state="normal")
-            self.nametext.config(state="normal")
-            self.faretext.config(state="normal")
-            self.sexpopup.config(state="normal")
-            self.pclasspopup.config(state="normal")
-            self.embarkedpopup.config(state="normal")
-            self.noffammebtext.config(state="normal")
-            self.nofparentstext.config(state="normal")
+            self.statechange("normal")
             self.filename = ""
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
 
