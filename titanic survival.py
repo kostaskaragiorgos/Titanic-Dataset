@@ -10,7 +10,7 @@ class Titanicsurvival():
     def __init__(self,master):
         self.master = master
         self.master.title("Titanic Survival")
-        self.master.geometry("250x200")
+        self.master.geometry("300x300")
         self.master.resizable(False, False)
         self.filename = ""
 
@@ -37,6 +37,14 @@ class Titanicsurvival():
         self.sexstring.set("Select a Sex")
         self.sexpopup = OptionMenu(self.master, self.sexstring, *self.sexlist)
         self.sexpopup.pack()
+
+        self.pclasslist = ["1st", "2nd", '3rd']
+        self.pclassstring = StringVar(master)
+        self.pclassstring.set("Select a Ticket class")
+        self.pclasspopup = OptionMenu(self.master, self.pclassstring, *self.pclasslist)
+        self.pclasspopup.pack()
+
+
 
         self.predictbutton = Button(self.master, text="PREDICT", command=self.predict)
         self.predictbutton.pack()
@@ -118,6 +126,8 @@ class Titanicsurvival():
         self.agetext.delete(1.0, END)
         self.nametext.delete(1.0, END)
         self.faretext.delete(1.0, END)
+        self.pclassstring.set("Select a Ticket class")
+        self.sexstring.set("Select a Sex")
 
 def main():
     root=Tk()
