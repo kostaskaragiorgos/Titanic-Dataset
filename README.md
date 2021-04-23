@@ -24,6 +24,14 @@
 
 # Files/Folders
 
+<ul>
+  <li> ./images </li>
+  <li> ./models </li>
+  <li> ./notebooks </li>
+  <li> ./submission files </li>
+  <li> keybinds.txt </li>
+</ul>
+
 # Dependencies
 
 
