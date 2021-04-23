@@ -1,0 +1,14 @@
+File menu
+========================
+Insert a csv file Ctrl+O
+Save file Ctrl+S
+Close file Ctrl+F4
+Exit Alt+F4
+=======================
+About menu
+============
+About Ctrl+I
+============
+Help menu
+============
+Help Ctrl+F1
