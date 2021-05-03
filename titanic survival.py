@@ -1,6 +1,10 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button, END, StringVar, OptionMenu
 import pandas as pd
-
+import pickle
+import keras
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Activation,Flatten
+from keras.optimizers import SGD
 
 def aboutmenu():
     """ about menu function """
@@ -13,6 +17,9 @@ class Titanicsurvival():
         self.master.geometry("300x350")
         self.master.resizable(False, False)
         self.filename = ""
+        model_filename = 'models/titanic600.sav'
+        self.loadedmodel = pickle.load(open(model_filename, 'rb'))
+        self.importeddf = ""
 
         self.nameleb = Label(self.master, text="Enter name")
         self.nameleb.pack()
@@ -104,6 +111,8 @@ class Titanicsurvival():
         if all([item in self.df.columns for item in ['PassengerId','Pclass','Name','Sex','Age','SibSp','Parch','Ticket','Fare','Cabin','Embarked']]):
             self.statechange("disable")
             msg.showinfo("SUCCESS", "CSV FILE ADDED SUCCESSFULLY")
+            self.importeddf = pd.read_csv(self.filename)
+            print(self.importeddf.head())
         else:
             self.filename = ""
             msg.showerror("ERROR", "NO PROPER CSV ")
