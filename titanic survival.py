@@ -162,9 +162,16 @@ class Titanicsurvival():
     def predict(self):
         try:
             if int(self.agetext.get(1.0, END)) > 0 and float(self.faretext.get(1.0, END)) >= 0 and int(self.nofparentstext.get(1.0,END)) >= 0 and int(self.noffammebtext.get(1.0,END)) >= 0:
-                print("OK")
+                pass
         except:
             msg.showerror("VALUE ERROR", "ENTER A VALID NUMBER")
+        
+        try:
+            if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
+                pass
+        except:
+            msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
+
 
 
 
