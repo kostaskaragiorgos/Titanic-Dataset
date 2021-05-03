@@ -160,12 +160,13 @@ class Titanicsurvival():
 
     
     def predict(self):
-        if self.agetext.get(1.0, END) <= 0:
-            msg.showerror("ERROR", "INVALID AGE VALUE\n PLEASE ENTER A VALID AGE VALUE")
-            break
-        elif self.faretext.get(1.0, END) < 0:
-            msg.showerror("ERROR", "INVALID FARE VALUE\n PLEASE ENTER A VALID FARE VALUE")
-            break
+        try:
+            if int(self.agetext.get(1.0, END)) > 0 and float(self.faretext.get(1.0, END)) > 0 and int(self.nofparentstext.get(1.0,END)) > 0:
+                print("OK")
+        except:
+            msg.showerror("VALUE ERROR", "ENTER A VALID NUMBER")
+
+
 
 
     def clear(self):
