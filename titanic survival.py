@@ -155,10 +155,18 @@ class Titanicsurvival():
             self.statechange("normal")
             self.filename = ""
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
+    
+
 
     
     def predict(self):
-        pass
+        if self.agetext.get(1.0, END) <= 0:
+            msg.showerror("ERROR", "INVALID AGE VALUE\n PLEASE ENTER A VALID AGE VALUE")
+            break
+        elif self.faretext.get(1.0, END) < 0:
+            msg.showerror("ERROR", "INVALID FARE VALUE\n PLEASE ENTER A VALID FARE VALUE")
+            break
+
 
     def clear(self):
         """ reset button function """
