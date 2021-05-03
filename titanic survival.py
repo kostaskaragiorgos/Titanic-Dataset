@@ -112,7 +112,7 @@ class Titanicsurvival():
             self.statechange("disable")
             msg.showinfo("SUCCESS", "CSV FILE ADDED SUCCESSFULLY")
             self.importeddf = pd.read_csv(self.filename)
-            print(self.importeddf.head())
+            self.fixinsertedfile()
         else:
             self.filename = ""
             msg.showerror("ERROR", "NO PROPER CSV ")
@@ -122,6 +122,17 @@ class Titanicsurvival():
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
     
+    def fixinsertedfile(self):
+        self.importeddf['Age'] = self.importeddf['Age'].fillna(self.importeddf['Age'].mean())
+        self.importeddf['Fare'] = self.importeddf['Fare'].fillna(self.importeddf['Fare'].mean())
+        agelabels = ['child','adult','old']
+        self.importeddf['age_group'] = pd.cut(self.importeddf['Age'], bins=3, labels=agelabels)
+        self.importeddf['age_group']= self.importeddf['age_group'].fillna('adult')
+        labelsfare = ['cheap', 'normal', 'expensive']
+        self.importeddf['Fare_group'] = pd.cut(self.importeddf['Fare'], bins=3, labels=labelsfare)
+        self.importeddf['Fare_group']= self.importeddf['Fare_group'].fillna('cheap')
+        self.importeddf.drop(columns=['PassengerId', 'Name', 'Cabin', 'Embarked', 'Ticket','Fare', 'Age'], inplace=True)
+
     def helpmenu(self):
         pass
 
