@@ -717,7 +717,7 @@ PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 716,0,3,"Soholt, Mr. Peter Andreas Lauritz Andersen",male,19,0,0,348124,7.65,F G73,S
 717,1,1,"Endres, Miss. Caroline Louise",female,38,0,0,PC 17757,227.525,C45,C
 718,1,2,"Troutt, Miss. Edwina Celia ""Winnie""",female,27,0,0,34218,10.5,E101,S
-719,0,3,"McEvoy, Mr. Michael",male,,0,0,36568,15.5,,Q
+719,0,3,"McEvoy, Mr. Michael",male,19,0,0,36568,15.5,,Q
 720,0,3,"Johnson, Mr. Malkolm Joackim",male,33,0,0,347062,7.775,,S
 721,1,2,"Harper, Miss. Annie Jessie ""Nina""",female,6,0,1,248727,33,,S
 722,0,3,"Jensen, Mr. Svend Lauritz",male,17,1,0,350048,7.0542,,S
@@ -814,7 +814,7 @@ PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 813,0,2,"Slemen, Mr. Richard James",male,35,0,0,28206,10.5,,S
 814,0,3,"Andersson, Miss. Ebba Iris Alfrida",female,6,4,2,347082,31.275,,S
 815,0,3,"Tomlin, Mr. Ernest Portage",male,30.5,0,0,364499,8.05,,S
-816,0,1,"Fry, Mr. Richard",male,,0,0,112058,0,B102,S
+816,0,1,"Fry, Mr. Richard",male,21,0,0,112058,0,B102,S
 817,0,3,"Heininen, Miss. Wendla Maria",female,23,0,0,STON/O2. 3101290,7.925,,S
 818,0,2,"Mallet, Mr. Albert",male,31,1,1,S.C./PARIS 2079,37.0042,,C
 819,0,3,"Holm, Mr. John Fredrik Alexander",male,43,0,0,C 7075,6.45,,S
