@@ -1,10 +1,9 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button, END, StringVar, OptionMenu
 import pandas as pd
+import numpy as np
 import pickle
-import keras
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation,Flatten
-from keras.optimizers import SGD
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.compose import ColumnTransformer
 
 def aboutmenu():
     """ about menu function """
@@ -17,7 +16,7 @@ class Titanicsurvival():
         self.master.geometry("300x350")
         self.master.resizable(False, False)
         self.filename = ""
-        model_filename = 'models/titanic600.sav'
+        model_filename = 'models/MLPClassifier30798.sav'
         self.loadedmodel = pickle.load(open(model_filename, 'rb'))
         self.importeddf = ""
 
@@ -112,7 +111,6 @@ class Titanicsurvival():
             self.statechange("disable")
             msg.showinfo("SUCCESS", "CSV FILE ADDED SUCCESSFULLY")
             self.importeddf = pd.read_csv(self.filename)
-            self.fixinsertedfile()
         else:
             self.filename = ""
             msg.showerror("ERROR", "NO PROPER CSV ")
@@ -132,7 +130,12 @@ class Titanicsurvival():
         self.importeddf['Fare_group'] = pd.cut(self.importeddf['Fare'], bins=3, labels=labelsfare)
         self.importeddf['Fare_group']= self.importeddf['Fare_group'].fillna('cheap')
         self.importeddf.drop(columns=['PassengerId', 'Name', 'Cabin', 'Embarked', 'Ticket','Fare', 'Age'], inplace=True)
-
+        X = self.importeddf.iloc[:,:].values
+        ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [1,4,-1])], remainder='passthrough')
+        X = np.array(ct.fit_transform(X))
+        sc = StandardScaler()
+        X[:, 2:] = sc.fit_transform(X[:, 2:])
+        return X
     def helpmenu(self):
         pass
 
@@ -180,17 +183,22 @@ class Titanicsurvival():
 
     
     def predict(self):
-        try:
-            if int(self.agetext.get(1.0, END)) > 0 and float(self.faretext.get(1.0, END)) >= 0 and int(self.nofparentstext.get(1.0,END)) >= 0 and int(self.noffammebtext.get(1.0,END)) >= 0:
-                pass
-        except:
-            msg.showerror("VALUE ERROR", "ENTER A VALID NUMBER")
-        
-        try:
-            if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
-                pass
-        except:
-            msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
+        if self.filename != "":
+            X = self.fixinsertedfile()
+            predictions= self.loadedmodel.predict(X).tolist()
+            print(predictions)
+        else:
+            try:
+                if int(self.agetext.get(1.0, END)) > 0 and float(self.faretext.get(1.0, END)) >= 0 and int(self.nofparentstext.get(1.0,END)) >= 0 and int(self.noffammebtext.get(1.0,END)) >= 0:
+                    pass
+            except:
+                msg.showerror("VALUE ERROR", "ENTER A VALID NUMBER")
+            
+            try:
+                if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
+                    pass
+            except:
+                msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
 
 
 
