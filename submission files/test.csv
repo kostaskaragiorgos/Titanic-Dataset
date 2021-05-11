@@ -28,11 +28,11 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 918,1,"Ostby, Miss. Helene Ragnhild",female,22,0,1,113509,61.9792,B36,C
 919,3,"Daher, Mr. Shedid",male,22.5,0,0,2698,7.225,,C
 920,1,"Brady, Mr. John Bertram",male,41,0,0,113054,30.5,A21,S
-921,3,"Samaan, Mr. Elias",male,,2,0,2662,21.6792,,C
+921,3,"Samaan, Mr. Elias",male,17,2,0,2662,21.6792,,C
 922,2,"Louch, Mr. Charles Alexander",male,50,1,0,SC/AH 3085,26,,S
 923,2,"Jefferys, Mr. Clifford Thomas",male,24,2,0,C.A. 31029,31.5,,S
 924,3,"Dean, Mrs. Bertram (Eva Georgetta Light)",female,33,1,2,C.A. 2315,20.575,,S
-925,3,"Johnston, Mrs. Andrew G (Elizabeth Lily"" Watson)""",female,,1,2,W./C. 6607,23.45,,S
+925,3,"Johnston, Mrs. Andrew G (Elizabeth Lily"" Watson)""",female,8,1,2,W./C. 6607,23.45,,S
 926,1,"Mock, Mr. Philipp Edmund",male,30,1,0,13236,57.75,C78,C
 927,3,"Katavelas, Mr. Vassilios (Catavelas Vassilios"")""",male,18.5,0,0,2682,7.2292,,C
 928,3,"Roth, Miss. Sarah A",female,26,0,0,342712,8.05,,S
@@ -53,7 +53,7 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 943,2,"Pulbaum, Mr. Franz",male,27,0,0,SC/PARIS 2168,15.0333,,C
 944,2,"Hocking, Miss. Ellen Nellie""""",female,20,2,1,29105,23,,S
 945,1,"Fortune, Miss. Ethel Flora",female,28,3,2,19950,263,C23 C25 C27,S
-946,2,"Mangiavacchi, Mr. Serafino Emilio",male,,0,0,SC/A.3 2861,15.5792,,C
+946,2,"Mangiavacchi, Mr. Serafino Emilio",male,47,0,0,SC/A.3 2861,15.5792,,C
 947,3,"Rice, Master. Albert",male,10,4,1,382652,29.125,,Q
 948,3,"Cor, Mr. Bartol",male,35,0,0,349230,7.8958,,S
 949,3,"Abelseth, Mr. Olaus Jorgensen",male,25,0,0,348122,7.65,F G63,S
@@ -75,7 +75,7 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 965,1,"Ovies y Rodriguez, Mr. Servando",male,28.5,0,0,PC 17562,27.7208,D43,C
 966,1,"Geiger, Miss. Amalie",female,35,0,0,113503,211.5,C130,C
 967,1,"Keeping, Mr. Edwin",male,32.5,0,0,113503,211.5,C132,C
-968,3,"Miles, Mr. Frank",male,,0,0,359306,8.05,23,S
+968,3,"Miles, Mr. Frank",male,23,0,0,359306,8.05,23,S
 969,1,"Cornell, Mrs. Robert Clifford (Malvina Helen Lamson)",female,55,2,0,11770,25.7,C101,S
 970,2,"Aldworth, Mr. Charles Augustus",male,30,0,0,248744,13,,S
 971,3,"Doyle, Miss. Elizabeth",female,24,0,0,368702,7.75,,Q
@@ -87,7 +87,7 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 977,3,"Khalil, Mr. Betros",male,25,1,0,2660,14.4542,,C
 978,3,"Barry, Miss. Julia",female,27,0,0,330844,7.8792,,Q
 979,3,"Badman, Miss. Emily Louisa",female,18,0,0,A/4 31416,8.05,,S
-980,3,"O'Donoghue, Ms. Bridget",female,,0,0,364856,7.75,,Q
+980,3,"O'Donoghue, Ms. Bridget",female,21,0,0,364856,7.75,,Q
 981,2,"Wells, Master. Ralph Lester",male,2,1,1,29103,23,,S
 982,3,"Dyker, Mrs. Adolf Fredrik (Anna Elisabeth Judith Andersson)",female,22,1,0,347072,13.9,,S
 983,3,"Pedersen, Mr. Olaf",male,28,0,0,345498,7.775,,S
@@ -132,7 +132,7 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 1022,3,"Spinner, Mr. Henry John",male,32,0,0,STON/OQ. 369943,8.05,,S
 1023,1,"Gracie, Col. Archibald IV",male,53,0,0,113780,28.5,C51,C
 1024,3,"Lefebre, Mrs. Frank (Frances)",female,40,0,4,4133,25.4667,,S
-1025,3,"Thomas, Mr. Charles P",male,,1,0,2621,6.4375,,C
+1025,3,"Thomas, Mr. Charles P",male,30,1,0,2621,6.4375,,C
 1026,3,"Dintcheff, Mr. Valtcho",male,43,0,0,349226,7.8958,,S
 1027,3,"Carlsson, Mr. Carl Robert",male,24,0,0,350409,7.8542,,S
 1028,3,"Zakarian, Mr. Mapriededer",male,26.5,0,0,2656,7.225,,C
@@ -167,9 +167,9 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 1057,3,"Kink-Heilmann, Mrs. Anton (Luise Heilmann)",female,26,1,1,315153,22.025,,S
 1058,1,"Brandeis, Mr. Emil",male,48,0,0,PC 17591,50.4958,B10,C
 1059,3,"Ford, Mr. Edward Watson",male,18,2,2,W./C. 6608,34.375,,S
-1060,1,"Cassebeer, Mrs. Henry Arthur Jr (Eleanor Genevieve Fosdick)",female,,0,0,17770,27.7208,,C
+1060,1,"Cassebeer, Mrs. Henry Arthur Jr (Eleanor Genevieve Fosdick)",female,36,0,0,17770,27.7208,,C
 1061,3,"Hellstrom, Miss. Hilda Maria",female,22,0,0,7548,8.9625,,S
-1062,3,"Lithman, Mr. Simon",male,,0,0,S.O./P.P. 251,7.55,,S
+1062,3,"Lithman, Mr. Simon",male,27,0,0,S.O./P.P. 251,7.55,,S
 1063,3,"Zakarian, Mr. Ortin",male,27,0,0,2670,7.225,,C
 1064,3,"Dyker, Mr. Adolf Fredrik",male,23,1,0,347072,13.9,,S
 1065,3,"Torfa, Mr. Assad",male,20,0,0,2673,7.2292,,C
@@ -215,7 +215,7 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 1105,2,"Howard, Mrs. Benjamin (Ellen Truelove Arman)",female,60,1,0,24065,26,,S
 1106,3,"Andersson, Miss. Ida Augusta Margareta",female,38,4,2,347091,7.775,,S
 1107,1,"Head, Mr. Christopher",male,42,0,0,113038,42.5,B11,S
-1108,3,"Mahon, Miss. Bridget Delia",female,,0,0,330924,7.8792,,Q
+1108,3,"Mahon, Miss. Bridget Delia",female,20,0,0,330924,7.8792,,Q
 1109,1,"Wick, Mr. George Dennick",male,57,1,1,36928,164.8667,,S
 1110,1,"Widener, Mrs. George Dunton (Eleanor Elkins)",female,50,1,1,113503,211.5,C80,C
 1111,3,"Thomson, Mr. Alexander Morrison",male,36,0,0,32302,8.05,,S
@@ -224,7 +224,7 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 1114,2,"Cook, Mrs. (Selena Rogers)",female,22,0,0,W./C. 14266,10.5,F33,S
 1115,3,"Karlsson, Mr. Einar Gervasius",male,21,0,0,350053,7.7958,,S
 1116,1,"Candee, Mrs. Edward (Helen Churchill Hungerford)",female,53,0,0,PC 17606,27.4458,,C
-1117,3,"Moubarek, Mrs. George (Omine Amenia"" Alexander)""",female,,0,2,2661,15.2458,,C
+1117,3,"Moubarek, Mrs. George (Omine Amenia"" Alexander)""",female,25,0,2,2661,15.2458,,C
 1118,3,"Asplund, Mr. Johan Charles",male,23,0,0,350054,7.7958,,S
 1119,3,"McNeill, Miss. Bridget",female,27,0,0,370368,7.75,,Q
 1120,3,"Everett, Mr. Thomas James",male,40.5,0,0,C.A. 6212,15.1,,S
@@ -255,7 +255,7 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 1145,3,"Salander, Mr. Karl Johan",male,24,0,0,7266,9.325,,S
 1146,3,"Wenzel, Mr. Linhart",male,32.5,0,0,345775,9.5,,S
 1147,3,"MacKay, Mr. George William",male,20,0,0,C.A. 42795,7.55,,S
-1148,3,"Mahon, Mr. John",male,,0,0,AQ/4 3130,7.75,,Q
+1148,3,"Mahon, Mr. John",male,22,0,0,AQ/4 3130,7.75,,Q
 1149,3,"Niklasson, Mr. Samuel",male,28,0,0,363611,8.05,,S
 1150,2,"Bentham, Miss. Lilian W",female,19,0,0,28404,13,,S
 1151,3,"Midtsjo, Mr. Karl Albert",male,21,0,0,345501,7.775,,S
@@ -338,7 +338,7 @@ PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 1228,2,"de Brito, Mr. Jose Joaquim",male,32,0,0,244360,13,,S
 1229,3,"Elias, Mr. Joseph",male,39,0,2,2675,7.2292,,C
 1230,2,"Denbury, Mr. Herbert",male,25,0,0,C.A. 31029,31.5,,S
-1231,3,"Betros, Master. Seman",male,,0,0,2622,7.2292,,C
+1231,3,"Betros, Master. Seman",male,10,0,0,2622,7.2292,,C
 1232,2,"Fillbrook, Mr. Joseph Charles",male,18,0,0,C.A. 15185,10.5,,S
 1233,3,"Lundstrom, Mr. Thure Edvin",male,32,0,0,350403,7.5792,,S
 1234,3,"Sage, Mr. John George",male,44,1,9,CA. 2343,69.55,,S
