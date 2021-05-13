@@ -180,6 +180,20 @@ class Titanicsurvival():
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
     
 
+    def setoptions(self):
+        if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
+            pass
+        else:
+            msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
+            self.clear()
+    
+    def setnumber(self):
+        if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
+            pass
+        else:
+            msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
+            self.clear()
+
 
     
     def predict(self):
@@ -188,17 +202,12 @@ class Titanicsurvival():
             predictions= self.loadedmodel.predict(X).tolist()
             print(predictions)
         else:
-            try:
-                if int(self.agetext.get(1.0, END)) > 0 and float(self.faretext.get(1.0, END)) >= 0 and int(self.nofparentstext.get(1.0,END)) >= 0 and int(self.noffammebtext.get(1.0,END)) >= 0:
-                    pass
-            except:
-                msg.showerror("VALUE ERROR", "ENTER A VALID NUMBER")
+            self.setoptions()
+            self.setnumber()
+ 
+
             
-            try:
-                if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
-                    pass
-            except:
-                msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
+
 
 
 
