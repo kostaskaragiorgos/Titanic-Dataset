@@ -191,12 +191,13 @@ class Titanicsurvival():
         if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
             pass
         else:
-            msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
+            msg.showerror("VALUE ERROR", "ENTER VALID NUMBERS")
             self.clearprediction("number")
 
 
     
     def predict(self):
+        """ predict button function """
         if self.filename != "":
             X = self.fixinsertedfile()
             predictions= self.loadedmodel.predict(X).tolist()
