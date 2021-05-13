@@ -136,6 +136,7 @@ class Titanicsurvival():
         sc = StandardScaler()
         X[:, 2:] = sc.fit_transform(X[:, 2:])
         return X
+
     def helpmenu(self):
         pass
 
@@ -180,6 +181,12 @@ class Titanicsurvival():
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
     
 
+    def valuecheck(self):
+        try:
+            if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
+                pass
+        except:
+            msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
 
     
     def predict(self):
@@ -193,12 +200,10 @@ class Titanicsurvival():
                     pass
             except:
                 msg.showerror("VALUE ERROR", "ENTER A VALID NUMBER")
+
+            self.valuecheck()
             
-            try:
-                if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
-                    pass
-            except:
-                msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
+
 
 
 
