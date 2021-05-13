@@ -207,11 +207,17 @@ class Titanicsurvival():
 
     
     def clear(self):
-        pass
-
+        """ reset button function """
+        self.pclassstring.set("Select a Ticket class")
+        self.sexstring.set("Select a Sex")
+        self.embarkedstring.set("Select a Port of Embarkation")
+        self.noffammebtext.delete(1.0, END)
+        self.agetext.delete(1.0, END)
+        self.nametext.delete(1.0, END)
+        self.faretext.delete(1.0, END)
+        self.nofparentstext.delete(1.0, END)
 
     def clearprediction(self, option):
-        """ reset button function """
         if option == "set":
             self.pclassstring.set("Select a Ticket class")
             self.sexstring.set("Select a Sex")
