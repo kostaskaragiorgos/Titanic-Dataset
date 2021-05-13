@@ -218,6 +218,7 @@ class Titanicsurvival():
         self.nofparentstext.delete(1.0, END)
 
     def clearprediction(self, option):
+        """ clear based on options """
         if option == "set":
             self.pclassstring.set("Select a Ticket class")
             self.sexstring.set("Select a Sex")
