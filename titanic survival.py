@@ -180,19 +180,19 @@ class Titanicsurvival():
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
     
 
-    def setoptions(self):
+    def checksetoptions(self):
         if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
             pass
         else:
             msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
-            self.clear()
+            self.clearprediction("set")
     
-    def setnumber(self):
+    def checknumbers(self):
         if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
             pass
         else:
             msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
-            self.clear()
+            self.clearprediction("number")
 
 
     
@@ -202,27 +202,27 @@ class Titanicsurvival():
             predictions= self.loadedmodel.predict(X).tolist()
             print(predictions)
         else:
-            self.setoptions()
-            self.setnumber()
- 
+            self.checksetoptions()
+            self.checknumbers()
 
-            
-
-
-
-
-
-
+    
     def clear(self):
+        pass
+
+
+    def clearprediction(self, option):
         """ reset button function """
-        self.agetext.delete(1.0, END)
-        self.nametext.delete(1.0, END)
-        self.faretext.delete(1.0, END)
-        self.pclassstring.set("Select a Ticket class")
-        self.sexstring.set("Select a Sex")
-        self.embarkedstring.set("Select a Port of Embarkation")
-        self.noffammebtext.delete(1.0, END)
-        self.nofparentstext.delete(1.0, END)
+        if option == "set":
+            self.pclassstring.set("Select a Ticket class")
+            self.sexstring.set("Select a Sex")
+            self.embarkedstring.set("Select a Port of Embarkation")
+        else:
+            self.noffammebtext.delete(1.0, END)
+            self.agetext.delete(1.0, END)
+            self.nametext.delete(1.0, END)
+            self.faretext.delete(1.0, END)
+            self.nofparentstext.delete(1.0, END)
+
 
 def main():
     root = Tk()
