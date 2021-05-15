@@ -1,4 +1,5 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button, END, StringVar, OptionMenu
+from tkinter.messagebox import askyesno
 import pandas as pd
 import numpy as np
 import pickle
@@ -19,6 +20,7 @@ class Titanicsurvival():
         model_filename = 'models/MLPClassifier30798.sav'
         self.loadedmodel = pickle.load(open(model_filename, 'rb'))
         self.importeddf = ""
+        self.predictions = ""
 
         self.nameleb = Label(self.master, text="Enter name")
         self.nameleb.pack()
@@ -200,8 +202,13 @@ class Titanicsurvival():
         """ predict button function """
         if self.filename != "":
             X = self.fixinsertedfile()
-            predictions= self.loadedmodel.predict(X).tolist()
-            print(predictions)
+            self.predictions= self.loadedmodel.predict(X).tolist()
+            answer = askyesno(title='Save predictions',
+                    message='Do you want to save the predictions?')
+            if answer:
+                pass
+            else:
+                msg.showinfo("NO", "NO PREDICTIONS SAVED")
         else:
             self.checksetoptions()
             self.checknumbers()
