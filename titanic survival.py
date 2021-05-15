@@ -89,7 +89,7 @@ class Titanicsurvival():
         self.menu.add_cascade(label = "File", menu=self.file_menu)
 
         self.show_menu = Menu(self.menu, tearoff=0)
-        self.show_menu.add_command(label="Show Predictions")
+        self.show_menu.add_command(label="Show Predictions", accelerator='Ctrl+ F5',command=self.showpredictions)
         self.menu.add_cascade(label="Show", menu=self.show_menu)
         
         self.edit_menu = Menu(self.menu, tearoff=0)
@@ -112,7 +112,8 @@ class Titanicsurvival():
         self.master.bind('<Control-o>', lambda event: self.insertfile())
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
 
-    
+    def showpredictions(self):
+        pass
 
     def check_columns(self):
         """ checks the columns name from the importrd .csv file """
