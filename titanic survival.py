@@ -150,14 +150,14 @@ class Titanicsurvival():
 
     def statechange(self, state):
         """ changes the state of buttons, texts etc.. """
-            self.agetext.config(state=state)
-            self.nametext.config(state=state)
-            self.faretext.config(state=state)
-            self.sexpopup.config(state=state)
-            self.pclasspopup.config(state=state)
-            self.embarkedpopup.config(state=state)
-            self.noffammebtext.config(state=state)
-            self.nofparentstext.config(state=state)
+        self.agetext.config(state=state)
+        self.nametext.config(state=state)
+        self.faretext.config(state=state)
+        self.sexpopup.config(state=state)
+        self.pclasspopup.config(state=state)
+        self.embarkedpopup.config(state=state)
+        self.noffammebtext.config(state=state)
+        self.nofparentstext.config(state=state)
 
 
     def file_input_validation(self):
@@ -191,6 +191,7 @@ class Titanicsurvival():
     
 
     def checksetoptions(self):
+        """ checks the user's options """
         if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
             pass
         else:
@@ -198,6 +199,7 @@ class Titanicsurvival():
             self.clearprediction("set")
     
     def checknumbers(self):
+        """ checks if the user has inserted valid number inputs """
         if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
             pass
         else:
