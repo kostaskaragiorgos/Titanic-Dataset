@@ -250,6 +250,7 @@ class Titanicsurvival():
 
 
 def main():
+    """ main function"""
     root = Tk()
     Titanicsurvival(root)
     root.mainloop()
