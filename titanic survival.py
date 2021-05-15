@@ -113,7 +113,10 @@ class Titanicsurvival():
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
 
     def showpredictions(self):
-        pass
+        if self.predictions == "":
+            msg.showerror("ERROR", "NO PREDICTIONS")
+        else:
+            pass
 
     def check_columns(self):
         """ checks the columns name from the importrd .csv file """
