@@ -116,7 +116,7 @@ class Titanicsurvival():
         if self.predictions == "":
             msg.showerror("ERROR", "NO PREDICTIONS")
         else:
-            pass
+            msg.showinfo("PREDICTIONS", str(self.predictions))
 
     def check_columns(self):
         """ checks the columns name from the importrd .csv file """
