@@ -149,6 +149,7 @@ class Titanicsurvival():
         pass
 
     def statechange(self, state):
+        """ changes the state of buttons, texts etc.. """
             self.agetext.config(state=state)
             self.nametext.config(state=state)
             self.faretext.config(state=state)
