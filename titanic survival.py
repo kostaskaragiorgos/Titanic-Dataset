@@ -123,6 +123,12 @@ class Titanicsurvival():
             self.master.destroy()
     
     def fixinsertedfile(self):
+        """ 
+        Creates a numpy array in order to make the predictions.
+        Returns:
+            X: numpy array ready to make the predictions
+        
+        """
         self.importeddf['Age'] = self.importeddf['Age'].fillna(self.importeddf['Age'].mean())
         self.importeddf['Fare'] = self.importeddf['Fare'].fillna(self.importeddf['Fare'].mean())
         agelabels = ['child','adult','old']
@@ -138,6 +144,7 @@ class Titanicsurvival():
         sc = StandardScaler()
         X[:, 2:] = sc.fit_transform(X[:, 2:])
         return X
+
     def helpmenu(self):
         pass
 
