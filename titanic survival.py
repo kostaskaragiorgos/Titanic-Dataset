@@ -10,6 +10,9 @@ def aboutmenu():
     """ about menu function """
     msg.showinfo("About", "Titanic survival \nVersion 1.0")
 
+def helpmenu():
+    pass
+
 class Titanicsurvival():
     def __init__(self, master):
         self.master = master
@@ -84,6 +87,10 @@ class Titanicsurvival():
         self.file_menu.add_command(label="Close file", accelerator='Ctrl+F4', command=self.closefile)
         self.file_menu.add_command(label="Exit", accelerator= 'Alt+F4',command=self.exitmenu)
         self.menu.add_cascade(label = "File", menu=self.file_menu)
+
+        self.show_menu = Menu(self.menu, tearoff=0)
+        self.show_menu.add_command(label="Show Predictions")
+        self.menu.add_cascade(label="Show", menu=self.show_menu)
         
         self.edit_menu = Menu(self.menu, tearoff=0)
         self.edit_menu.add_command(label="Clear", accelerator='Ctrl+Z', command=self.clear)
@@ -94,13 +101,13 @@ class Titanicsurvival():
         self.menu.add_cascade(label="About", menu=self.about_menu)
         
         self.help_menu = Menu(self.menu, tearoff=0)
-        self.help_menu.add_command(label="Help", accelerator='Ctrl+F1', command=self.helpmenu)
+        self.help_menu.add_command(label="Help", accelerator='Ctrl+F1', command=helpmenu)
         self.menu.add_cascade(label="Help", menu=self.help_menu)
         
         self.master.config(menu=self.menu)
         self.master.bind('<Control-z>', lambda event: self.clear())
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
-        self.master.bind('<Control-F1>', lambda event: self.helpmenu())
+        self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
         self.master.bind('<Control-o>', lambda event: self.insertfile())
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
@@ -145,8 +152,6 @@ class Titanicsurvival():
         X[:, 2:] = sc.fit_transform(X[:, 2:])
         return X
 
-    def helpmenu(self):
-        pass
 
     def statechange(self, state):
         """ changes the state of buttons, texts etc.. """
@@ -187,6 +192,7 @@ class Titanicsurvival():
         else:
             self.statechange("normal")
             self.filename = ""
+            self.predictions = ""
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
     
 
@@ -210,7 +216,11 @@ class Titanicsurvival():
     
     def predict(self):
         """ predict button function """
-        if self.filename != "":
+
+        if self.filename != "" and self.predictions != "":
+            pass
+
+        elif self.filename != "":
             X = self.fixinsertedfile()
             self.predictions= self.loadedmodel.predict(X).tolist()
             answer = askyesno(title='Save predictions',
