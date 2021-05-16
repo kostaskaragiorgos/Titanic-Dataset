@@ -114,16 +114,24 @@ class Titanicsurvival():
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
 
     
-    def savepredictions(self):
-        """ saves the predictions to a csv file"""
-        filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
-                                                             filetypes=(("csv files", "*.csv"),
-                                                                        ("all files", "*.*")))
-        if filenamesave is None or filenamesave == "":
+    def checktosave(self, filename):
+        if filename is None or filename == "":
             msg.showerror("ERROR", "NO FILE SAVED")
         else:
-            np.savetxt(str(filenamesave)+".csv", self.predictions)
+            np.savetxt(str(filename)+".csv", self.predictions)
             msg.showinfo("SUCCESS", "CSV FILE SAVED SUCCESSFULLY")
+
+    
+    def savepredictions(self):
+        """ saves the predictions to a csv file"""
+        if self.predictions == "":
+            msg.showerror("ERROR", "NO PREDICTIONS TO SAVE")
+        else:
+            filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
+                                                                filetypes=(("csv files", "*.csv"),
+                                                                            ("all files", "*.*")))
+            self.checktosave(filenamesave)
+
 
 
     def showpredictions(self):
