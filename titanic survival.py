@@ -223,7 +223,7 @@ class Titanicsurvival():
         """ predict button function """
 
         if self.filename != "" and self.predictions != "":
-            msg.showerror("ERROR", "ALREADY PREDICTED")
+            msg.showerror("ERROR", "PREDICTIONS HAVE ALREADY BE DONE")
         elif self.filename != "":
             X = self.fixinsertedfile()
             self.predictions= self.loadedmodel.predict(X).tolist()
