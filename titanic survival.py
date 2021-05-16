@@ -243,7 +243,7 @@ class Titanicsurvival():
             answer = askyesno(title='Save predictions',
                     message='Do you want to save the predictions?')
             if answer:
-                pass
+                self.savepredictions()
             else:
                 msg.showinfo("NO", "NO PREDICTIONS SAVED")
         else:
