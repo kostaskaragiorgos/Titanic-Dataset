@@ -113,6 +113,10 @@ class Titanicsurvival():
         self.master.bind('<Control-o>', lambda event: self.insertfile())
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
 
+    
+    def savepredictions(self):
+        pass
+
     def showpredictions(self):
         """ show predictions function """
         if self.predictions == "":
