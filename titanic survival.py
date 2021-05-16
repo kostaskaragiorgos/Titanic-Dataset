@@ -122,6 +122,7 @@ class Titanicsurvival():
             msg.showerror("ERROR", "NO FILE SAVED")
         else:
             np.savetxt(str(filenamesave)+".csv", self.predictions)
+            msg.showinfo("SUCCESS", "CSV FILE SAVED SUCCESSFULLY")
 
 
     def showpredictions(self):
