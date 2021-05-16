@@ -115,6 +115,7 @@ class Titanicsurvival():
 
     
     def savepredictions(self):
+        """ saves the predictions to a csv file"""
         filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
                                                              filetypes=(("csv files", "*.csv"),
                                                                         ("all files", "*.*")))
