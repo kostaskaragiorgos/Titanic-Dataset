@@ -135,7 +135,7 @@ class Titanicsurvival():
 
     def check_columns(self):
         """ checks the columns name from the importrd .csv file """
-        if all([item in self.df.columns for item in ['PassengerId','Pclass','Name','Sex','Age','SibSp','Parch','Ticket','Fare','Cabin','Embarked']]):
+        if all([item in self.df.columns for item in ['PassengerId', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']]):
             self.statechange("disable")
             msg.showinfo("SUCCESS", "CSV FILE ADDED SUCCESSFULLY")
             self.importeddf = pd.read_csv(self.filename)
@@ -159,13 +159,13 @@ class Titanicsurvival():
         self.importeddf['Fare'] = self.importeddf['Fare'].fillna(self.importeddf['Fare'].mean())
         agelabels = ['child','adult','old']
         self.importeddf['age_group'] = pd.cut(self.importeddf['Age'], bins=3, labels=agelabels)
-        self.importeddf['age_group']= self.importeddf['age_group'].fillna('adult')
+        self.importeddf['age_group'] = self.importeddf['age_group'].fillna('adult')
         labelsfare = ['cheap', 'normal', 'expensive']
         self.importeddf['Fare_group'] = pd.cut(self.importeddf['Fare'], bins=3, labels=labelsfare)
-        self.importeddf['Fare_group']= self.importeddf['Fare_group'].fillna('cheap')
-        self.importeddf.drop(columns=['PassengerId', 'Name', 'Cabin', 'Embarked', 'Ticket','Fare', 'Age'], inplace=True)
-        X = self.importeddf.iloc[:,:].values
-        ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [1,4,-1])], remainder='passthrough')
+        self.importeddf['Fare_group'] = self.importeddf['Fare_group'].fillna('cheap')
+        self.importeddf.drop(columns=['PassengerId', 'Name', 'Cabin', 'Embarked', 'Ticket', 'Fare', 'Age'], inplace=True)
+        X = self.importeddf.iloc[:, :].values
+        ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [1, 4, -1])], remainder='passthrough')
         X = np.array(ct.fit_transform(X))
         sc = StandardScaler()
         X[:, 2:] = sc.fit_transform(X[:, 2:])
@@ -242,7 +242,7 @@ class Titanicsurvival():
             X = self.fixinsertedfile()
             self.predictions= self.loadedmodel.predict(X).tolist()
             answer = askyesno(title='Save predictions',
-                    message='Do you want to save the predictions?')
+                    message = 'Do you want to save the predictions?')
             if answer:
                 self.savepredictions()
             else:
