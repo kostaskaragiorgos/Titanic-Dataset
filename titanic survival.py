@@ -113,6 +113,7 @@ class Titanicsurvival():
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
 
     def showpredictions(self):
+        """ show predictions function """
         if self.predictions == "":
             msg.showerror("ERROR", "NO PREDICTIONS")
         else:
