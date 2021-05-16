@@ -115,7 +115,14 @@ class Titanicsurvival():
 
     
     def savepredictions(self):
-        pass
+        filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
+                                                             filetypes=(("csv files", "*.csv"),
+                                                                        ("all files", "*.*")))
+        if filenamesave is None or filenamesave == "":
+            msg.showerror("ERROR", "NO FILE SAVED")
+        else:
+            np.savetxt(str(filenamesave)+".csv", self.predictions)
+
 
     def showpredictions(self):
         """ show predictions function """
