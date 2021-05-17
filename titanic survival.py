@@ -86,6 +86,7 @@ class Titanicsurvival():
         self.file_menu.add_command(label="Insert a csv", accelerator='Ctrl+O', command=self.insertfile)
         self.file_menu.add_command(label="Close file", accelerator='Ctrl+F4', command=self.closefile)
         self.file_menu.add_command(label="Save file", accelerator='Ctrl+S', command=self.savepredictions)
+        self.file_menu.add_command(label="Save to existed file", accelerator='Alt+S', command=self.savetoexisted)
         self.file_menu.add_command(label="Exit", accelerator= 'Alt+F4',command=self.exitmenu)
         self.menu.add_cascade(label = "File", menu=self.file_menu)
 
@@ -122,7 +123,9 @@ class Titanicsurvival():
             np.savetxt(str(filename)+".csv", self.predictions)
             msg.showinfo("SUCCESS", "CSV FILE SAVED SUCCESSFULLY")
 
-    
+    def savetoexisted(self):
+        pass
+
     def savepredictions(self):
         """ saves the predictions to a csv file"""
         if self.predictions == "":
