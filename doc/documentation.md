@@ -7,6 +7,20 @@
 
 ## Close file
 
+You can close a .csv file using menu File --> Close file or using Ctrl+F4 keybind
+
+
+<p><img src = "doc images/File menu/close file.png" title="Close file"/> </p>
+
+if no .csv file is imported an informative message pops up
+
+<p><img src = "doc images/File menu/no csv file.png" title="No file imported"/> </p>
+
+else
+
+an informative message pops up
+
+<p><img src ="doc images/File menu/successful file close.png" title="successful file close"/> </p>
 
 
 ## Exit
