@@ -14,7 +14,7 @@ You can close a .csv file using menu File --> Close file or using Ctrl+F4 keybin
 
 if no .csv file is imported an informative message pops up
 
-<p><img src = "doc images/File menu/no csv file.png" title="No file imported"/> </p>
+<p><img src = "doc images/File menu/no csv file.png" title="No file to close"/> </p>
 
 else
 
