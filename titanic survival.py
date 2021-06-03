@@ -1,4 +1,5 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button, END, StringVar, OptionMenu
+from tkinter.constants import E
 from tkinter.messagebox import askyesno
 import pandas as pd
 import numpy as np
@@ -227,15 +228,15 @@ class Titanicsurvival():
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
     
 
-    def checksetoptions(self):
+    def checksetoptions(self,userinput):
         """ checks the user's options """
         if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
-            pass
+            userinput.append([str(self.embarkedstring.get()), str(self.sexstring.get()), str(self.pclassstring.get())])
         else:
             msg.showerror("VALUE ERROR", "SELECT A VALID OPTION")
             self.clearprediction("set")
     
-    def checknumbers(self):
+    def checknumbers(self, userinput):
         """ checks if the user has inserted valid number inputs """
         if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
             pass
@@ -260,8 +261,9 @@ class Titanicsurvival():
             else:
                 msg.showinfo("NO", "NO PREDICTIONS SAVED")
         else:
-            self.checksetoptions()
-            self.checknumbers()
+            userinput = []
+            self.checksetoptions(userinput)
+            self.checknumbers(userinput)
 
     
     def clear(self):
