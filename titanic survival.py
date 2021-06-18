@@ -12,7 +12,7 @@ def aboutmenu():
     msg.showinfo("About", "Titanic survival \nVersion 1.0")
 
 def helpmenu():
-    pass
+    msg.showinfo("Help", "Insert a csv file to predict the titanic survivals")
 
 class Titanicsurvival():
     def __init__(self, master):
