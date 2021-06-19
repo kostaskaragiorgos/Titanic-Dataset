@@ -42,6 +42,17 @@ You press ok to close the app or cancel if you don't want
 # Show menu
 
 
+You can show the predictions  by using menu Show --> Predictions or using Ctrl+F5 keybind
+
+<p><img src ="doc images/Show menu/predictions.png" title="Predictions menu"/> </p>
+
+An informative message window pops up
+
+else an error message window pops up
+
+<p><img src ="doc images/Show menu/no predictions.png" title="no predictions"/> </p>
+
+
 # About menu
 
 You can show info about the app by using menu About --> About or using Ctrl+i keybind
