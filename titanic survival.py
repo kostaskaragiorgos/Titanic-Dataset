@@ -97,14 +97,14 @@ class Titanicsurvival():
         
         self.edit_menu = Menu(self.menu, tearoff=0)
         self.edit_menu.add_command(label="Clear All", accelerator='Ctrl+Z', command=self.clear)
-        self.submenu = Menu(self.edit_menu, tearoff=0)
-        self.submenu.add_command(label="Name")
-        self.submenu.add_command(label="Age")
-        self.submenu.add_command(label="Siblings/Spouses")
-        self.submenu.add_command(label="Parents/Children")
-        self.submenu.add_command(label="Fare")
+        self.submenuclear = Menu(self.edit_menu, tearoff=0)
+        self.submenuclear.add_command(label="Name")
+        self.submenuclear.add_command(label="Age")
+        self.submenuclear.add_command(label="Siblings/Spouses")
+        self.submenuclear.add_command(label="Parents/Children")
+        self.submenuclear.add_command(label="Fare")
         self.edit_menu.add_cascade(label="Clear text",
-                                   menu=self.submenu, underline=0)
+                                   menu=self.submenuclear, underline=0)
         self.menu.add_cascade(label="Edit", menu=self.edit_menu)
 
         self.about_menu = Menu(self.menu, tearoff=0)
