@@ -129,6 +129,7 @@ class Titanicsurvival():
         self.master.bind('<Control-i>', lambda event: aboutmenu())
         self.master.bind('<Control-o>', lambda event: self.insertfile())
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
+        self.master.bind('<Control-t>', lambda event: self.clear(self.nametext))
 
     
     def checktosave(self, filename):
@@ -280,8 +281,10 @@ class Titanicsurvival():
             self.checknumbers(userinput)
 
     
-    def clear(self):
+    def clear(self, toclear):
         """ reset button function """
+        toclear.delete(1.0,END)
+        """
         self.pclassstring.set("Select a Ticket class")
         self.sexstring.set("Select a Sex")
         self.embarkedstring.set("Select a Port of Embarkation")
@@ -290,6 +293,7 @@ class Titanicsurvival():
         self.nametext.delete(1.0, END)
         self.faretext.delete(1.0, END)
         self.nofparentstext.delete(1.0, END)
+        """
 
     def clearprediction(self, option):
         """ clear based on options """
