@@ -96,7 +96,7 @@ class Titanicsurvival():
         self.menu.add_cascade(label="Show", menu=self.show_menu)
         
         self.edit_menu = Menu(self.menu, tearoff=0)
-        self.edit_menu.add_command(label="Clear", accelerator='Ctrl+Z', command=self.clear)
+        self.edit_menu.add_command(label="Clear All", accelerator='Ctrl+Z', command=self.clear)
         self.menu.add_cascade(label="Edit", menu=self.edit_menu)
 
         self.about_menu = Menu(self.menu, tearoff=0)
