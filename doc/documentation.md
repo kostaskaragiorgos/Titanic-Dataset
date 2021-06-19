@@ -4,6 +4,9 @@
 
 ## Insert a csv
 
+You can insert a .csv file using menu File --> Insert a csv file or using Ctrl+O keybind
+
+<p><img src = "doc images/File menu/insert a csv.png" title="Insert file"/> </p>
 
 ## Close file
 
