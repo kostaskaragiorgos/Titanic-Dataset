@@ -64,6 +64,10 @@ An informative message pops up
 <p><img src="doc images/About menu/about.png" title="about menu"/></p> 
 
 
+# Edit menu
+
+## Clear All
+
 # Help menu
 
 
