@@ -53,6 +53,11 @@ else an error message window pops up
 <p><img src ="doc images/Show menu/no predictions.png" title="no predictions"/> </p>
 
 
+# Edit menu
+
+## Clear All
+
+
 # About menu
 
 You can show info about the app by using menu About --> About or using Ctrl+i keybind
@@ -64,9 +69,8 @@ An informative message pops up
 <p><img src="doc images/About menu/about.png" title="about menu"/></p> 
 
 
-# Edit menu
 
-## Clear All
+
 
 # Help menu
 
