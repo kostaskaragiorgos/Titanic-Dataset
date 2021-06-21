@@ -130,6 +130,7 @@ class Titanicsurvival():
         self.master.bind('<Control-o>', lambda event: self.insertfile())
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
         self.master.bind('<Control-t>', lambda event: self.clear(self.nametext))
+        self.master.bind('<Alt-t>', lambda event: self.clear(self.agetext))
 
     
     def checktosave(self, filename):
