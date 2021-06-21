@@ -133,7 +133,10 @@ class Titanicsurvival():
         self.master.bind('<Alt-t>', lambda event: self.clear(self.agetext))
         self.master.bind('<Alt-z>', lambda event: self.clear(self.faretext))
         self.master.bind('<Alt-n>', lambda event: self.clear(self.nofparentstext))
-        self.master.bind('<Control-n>', lambda event:self.clear(self.noffammebtext))
+        self.master.bind('<Control-n>', lambda event: self.clear(self.noffammebtext))
+        self.master.bind('<Control-m>', lambda event: self.clear(toclear=self.pclassstring, textflag=False, text="Select a Ticket class"))
+        self.master.bind('<Alt-m>', lambda event: self.clear(toclear=self.sexstring, textflag=False, text="Select a Sex"))
+        self.master.bind('<Control-k>', lambda event: self.clear(toclear=self.embarkedstring, textflag=False, text="Select a Port of Embarkation"))
 
     
     def checktosave(self, filename):
@@ -285,7 +288,7 @@ class Titanicsurvival():
             self.checknumbers(userinput)
 
     
-    def clear(self, toclear=None):
+    def clear(self, toclear=None, textflag = True, text  = ""):
         """ reset button function """
         if toclear is None:
             self.pclassstring.set("Select a Ticket class")
@@ -296,8 +299,10 @@ class Titanicsurvival():
             self.nametext.delete(1.0, END)
             self.faretext.delete(1.0, END)
             self.nofparentstext.delete(1.0, END)
-        else:
+        elif textflag:
             toclear.delete(1.0,END)
+        else:
+            toclear.set(str(text))
 
     def clearprediction(self, option):
         """ clear based on options """
