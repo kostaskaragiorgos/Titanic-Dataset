@@ -123,7 +123,7 @@ class Titanicsurvival():
         
         self.master.config(menu=self.menu)
         self.master.bind('<Control-F5>', lambda event: self.showpredictions())
-        self.master.bind('<Control-z>', lambda event: self.clear())
+        self.master.bind('<Control-z>', lambda event: self.clear(None))
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
@@ -282,19 +282,19 @@ class Titanicsurvival():
             self.checknumbers(userinput)
 
     
-    def clear(self, toclear):
+    def clear(self, toclear=None):
         """ reset button function """
-        toclear.delete(1.0,END)
-        """
-        self.pclassstring.set("Select a Ticket class")
-        self.sexstring.set("Select a Sex")
-        self.embarkedstring.set("Select a Port of Embarkation")
-        self.noffammebtext.delete(1.0, END)
-        self.agetext.delete(1.0, END)
-        self.nametext.delete(1.0, END)
-        self.faretext.delete(1.0, END)
-        self.nofparentstext.delete(1.0, END)
-        """
+        if toclear is None:
+            self.pclassstring.set("Select a Ticket class")
+            self.sexstring.set("Select a Sex")
+            self.embarkedstring.set("Select a Port of Embarkation")
+            self.noffammebtext.delete(1.0, END)
+            self.agetext.delete(1.0, END)
+            self.nametext.delete(1.0, END)
+            self.faretext.delete(1.0, END)
+            self.nofparentstext.delete(1.0, END)
+        else:
+            toclear.delete(1.0,END)
 
     def clearprediction(self, option):
         """ clear based on options """
