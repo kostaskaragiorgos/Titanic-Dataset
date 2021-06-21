@@ -98,17 +98,17 @@ class Titanicsurvival():
         self.edit_menu = Menu(self.menu, tearoff=0)
         self.edit_menu.add_command(label="Clear All", accelerator='Ctrl+Z', command=self.clear)
         self.submenuclear = Menu(self.edit_menu, tearoff=0)
-        self.submenuclear.add_command(label="Name")
-        self.submenuclear.add_command(label="Age")
-        self.submenuclear.add_command(label="Siblings/Spouses")
-        self.submenuclear.add_command(label="Parents/Children")
-        self.submenuclear.add_command(label="Fare")
+        self.submenuclear.add_command(label="Name", accelerator="Ctrl+T")
+        self.submenuclear.add_command(label="Age", accelerator="Alt+T")
+        self.submenuclear.add_command(label="Siblings/Spouses", accelerator="Alt+N" )
+        self.submenuclear.add_command(label="Parents/Children", accelerator="Ctrl+N")
+        self.submenuclear.add_command(label="Fare", accelerator="Alt+Z")
         self.edit_menu.add_cascade(label="Clear text",
                                    menu=self.submenuclear, underline=0)
         self.submenureset = Menu(self.edit_menu, tearoff=0)
-        self.submenureset.add_command(label="Sex")
-        self.submenureset.add_command(label="Ticket class")
-        self.submenureset.add_command(label="Embarkation")
+        self.submenureset.add_command(label="Sex", accelerator="Alt+M")
+        self.submenureset.add_command(label="Ticket class", accelerator="Ctrl+M")
+        self.submenureset.add_command(label="Embarkation", accelerator="Ctrl+K")
         self.edit_menu.add_cascade(label="Reset Options",
                                    menu=self.submenureset, underline=0)
         self.menu.add_cascade(label="Edit", menu=self.edit_menu)
@@ -138,7 +138,6 @@ class Titanicsurvival():
         self.master.bind('<Alt-m>', lambda event: self.clear(toclear=self.sexstring, textflag=False, text="Select a Sex"))
         self.master.bind('<Control-k>', lambda event: self.clear(toclear=self.embarkedstring, textflag=False, text="Select a Port of Embarkation"))
 
-    
     def checktosave(self, filename):
         if filename is None or filename == "":
             msg.showerror("ERROR", "NO FILE SAVED")
