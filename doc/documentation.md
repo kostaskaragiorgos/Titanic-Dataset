@@ -4,6 +4,9 @@
 
 ## Insert a csv
 
+You can insert a .csv file using menu File --> Insert a csv file or using Ctrl+O keybind
+
+<p><img src = "doc images/File menu/insert a csv.png" title="Insert file"/> </p>
 
 ## Close file
 
@@ -39,6 +42,22 @@ You press ok to close the app or cancel if you don't want
 # Show menu
 
 
+You can show the predictions  by using menu Show --> Predictions or using Ctrl+F5 keybind
+
+<p><img src ="doc images/Show menu/predictions.png" title="Predictions menu"/> </p>
+
+An informative message window pops up
+
+else an error message window pops up
+
+<p><img src ="doc images/Show menu/no predictions.png" title="no predictions"/> </p>
+
+
+# Edit menu
+
+## Clear All
+
+
 # About menu
 
 You can show info about the app by using menu About --> About or using Ctrl+i keybind
@@ -48,6 +67,9 @@ You can show info about the app by using menu About --> About or using Ctrl+i ke
 An informative message pops up
 
 <p><img src="doc images/About menu/about.png" title="about menu"/></p> 
+
+
+
 
 
 # Help menu

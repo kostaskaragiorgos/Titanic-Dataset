@@ -12,7 +12,7 @@ def aboutmenu():
     msg.showinfo("About", "Titanic survival \nVersion 1.0")
 
 def helpmenu():
-    pass
+    msg.showinfo("Help", "Insert a csv file to predict the titanic survivals")
 
 class Titanicsurvival():
     def __init__(self, master):
@@ -96,7 +96,21 @@ class Titanicsurvival():
         self.menu.add_cascade(label="Show", menu=self.show_menu)
         
         self.edit_menu = Menu(self.menu, tearoff=0)
-        self.edit_menu.add_command(label="Clear", accelerator='Ctrl+Z', command=self.clear)
+        self.edit_menu.add_command(label="Clear All", accelerator='Ctrl+Z', command=self.clear)
+        self.submenuclear = Menu(self.edit_menu, tearoff=0)
+        self.submenuclear.add_command(label="Name", accelerator="Ctrl+T")
+        self.submenuclear.add_command(label="Age", accelerator="Alt+T")
+        self.submenuclear.add_command(label="Siblings/Spouses", accelerator="Alt+N" )
+        self.submenuclear.add_command(label="Parents/Children", accelerator="Ctrl+N")
+        self.submenuclear.add_command(label="Fare", accelerator="Alt+Z")
+        self.edit_menu.add_cascade(label="Clear text",
+                                   menu=self.submenuclear, underline=0)
+        self.submenureset = Menu(self.edit_menu, tearoff=0)
+        self.submenureset.add_command(label="Sex", accelerator="Alt+M")
+        self.submenureset.add_command(label="Ticket class", accelerator="Ctrl+M")
+        self.submenureset.add_command(label="Embarkation", accelerator="Ctrl+K")
+        self.edit_menu.add_cascade(label="Reset Options",
+                                   menu=self.submenureset, underline=0)
         self.menu.add_cascade(label="Edit", menu=self.edit_menu)
 
         self.about_menu = Menu(self.menu, tearoff=0)
@@ -109,14 +123,21 @@ class Titanicsurvival():
         
         self.master.config(menu=self.menu)
         self.master.bind('<Control-F5>', lambda event: self.showpredictions())
-        self.master.bind('<Control-z>', lambda event: self.clear())
+        self.master.bind('<Control-z>', lambda event: self.clear(None))
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
         self.master.bind('<Control-o>', lambda event: self.insertfile())
         self.master.bind('<Control-F4>', lambda evemt: self.closefile())
+        self.master.bind('<Control-t>', lambda event: self.clear(self.nametext))
+        self.master.bind('<Alt-t>', lambda event: self.clear(self.agetext))
+        self.master.bind('<Alt-z>', lambda event: self.clear(self.faretext))
+        self.master.bind('<Alt-n>', lambda event: self.clear(self.nofparentstext))
+        self.master.bind('<Control-n>', lambda event: self.clear(self.noffammebtext))
+        self.master.bind('<Control-m>', lambda event: self.clear(toclear=self.pclassstring, textflag=False, text="Select a Ticket class"))
+        self.master.bind('<Alt-m>', lambda event: self.clear(toclear=self.sexstring, textflag=False, text="Select a Sex"))
+        self.master.bind('<Control-k>', lambda event: self.clear(toclear=self.embarkedstring, textflag=False, text="Select a Port of Embarkation"))
 
-    
     def checktosave(self, filename):
         if filename is None or filename == "":
             msg.showerror("ERROR", "NO FILE SAVED")
@@ -266,16 +287,21 @@ class Titanicsurvival():
             self.checknumbers(userinput)
 
     
-    def clear(self):
+    def clear(self, toclear=None, textflag = True, text  = ""):
         """ reset button function """
-        self.pclassstring.set("Select a Ticket class")
-        self.sexstring.set("Select a Sex")
-        self.embarkedstring.set("Select a Port of Embarkation")
-        self.noffammebtext.delete(1.0, END)
-        self.agetext.delete(1.0, END)
-        self.nametext.delete(1.0, END)
-        self.faretext.delete(1.0, END)
-        self.nofparentstext.delete(1.0, END)
+        if toclear is None:
+            self.pclassstring.set("Select a Ticket class")
+            self.sexstring.set("Select a Sex")
+            self.embarkedstring.set("Select a Port of Embarkation")
+            self.noffammebtext.delete(1.0, END)
+            self.agetext.delete(1.0, END)
+            self.nametext.delete(1.0, END)
+            self.faretext.delete(1.0, END)
+            self.nofparentstext.delete(1.0, END)
+        elif textflag:
+            toclear.delete(1.0,END)
+        else:
+            toclear.set(str(text))
 
     def clearprediction(self, option):
         """ clear based on options """

@@ -1,8 +1,9 @@
 File menu
 ========================
 Insert a csv file Ctrl+O
-Save file Ctrl+S
 Close file Ctrl+F4
+Save file Ctrl+S
+Save to existed file Alt+S
 Exit Alt+F4
 =============
 Show menu
