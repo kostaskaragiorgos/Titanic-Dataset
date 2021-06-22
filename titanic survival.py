@@ -106,9 +106,9 @@ class Titanicsurvival():
         self.edit_menu.add_cascade(label="Clear text",
                                    menu=self.submenuclear, underline=0)
         self.submenureset = Menu(self.edit_menu, tearoff=0)
-        self.submenureset.add_command(label="Sex", accelerator="Alt+M")
-        self.submenureset.add_command(label="Ticket class", accelerator="Ctrl+M")
-        self.submenureset.add_command(label="Embarkation", accelerator="Ctrl+K")
+        self.submenureset.add_command(label="Sex", accelerator="Alt+M", command=lambda event: self.clear(toclear=self.sexstring, textflag=False, text="Select a Sex"))
+        self.submenureset.add_command(label="Ticket class", accelerator="Ctrl+M", command=lambda event: self.clear(toclear=self.pclassstring, textflag=False, text="Select a Ticket class"))
+        self.submenureset.add_command(label="Embarkation", accelerator="Ctrl+K", command=lambda event: self.clear(toclear=self.embarkedstring, textflag=False, text="Select a Port of Embarkation"))
         self.edit_menu.add_cascade(label="Reset Options",
                                    menu=self.submenureset, underline=0)
         self.menu.add_cascade(label="Edit", menu=self.edit_menu)
