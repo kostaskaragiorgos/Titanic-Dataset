@@ -29,9 +29,20 @@ an informative message pops up
 
 <p><img src ="doc images/File menu/save file.png" title="save file"/> </p>
 
+if there are no predictions to save an error window pops up
+
+<p><img src ="doc images/File menu/no predictions to save.png" title="no predictions to save"/> </p>
+
+
 ## Save to existed file
 
 <p><img src ="doc images/File menu/save to existed file.png" title="Save to existed file"/> </p>
+
+
+if there are no predictions to save an error window pops up
+
+<p><img src ="doc images/File menu/no predictions to save.png" title="no predictions to save"/> </p>
+
 
 ## Exit
 
