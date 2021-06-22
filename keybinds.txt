@@ -21,6 +21,12 @@ Age Alt+T
 Siblings/Spouses Alt + N
 Parents/Children Ctrl + N
 Fare Alt + Z
+=====================
+Reset Options submenu
+======================
+Sex Alt+M
+Ticket class Ctrl + M
+Embarkation + Ctrl + K
 ============
 About menu
 ============
