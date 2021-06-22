@@ -57,6 +57,27 @@ else an error message window pops up
 
 ## Clear All
 
+## Clear Text
+
+### Name
+
+
+### Age
+
+### Siblings/Spouses
+
+### Parents/Children
+
+### Fare
+
+## Reset Options
+
+### Sex
+
+### Ticket class
+
+### Embarkation
+
 
 # About menu
 
