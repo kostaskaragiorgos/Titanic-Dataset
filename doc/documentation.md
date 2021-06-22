@@ -63,21 +63,33 @@ else an error message window pops up
 
 ### Name
 
+You can clear the name text field by using Edit --> Clear text --> Name or by using Ctrl + T keybind
+
 <p><img src ="doc images/Edit menu/clear text name.png" title="clear text name"/> </p>
 
 ### Age
+
+
+You can clear the age text field by using Edit --> Clear text --> Age or by using Alt + T keybind
 
 <p><img src ="doc images/Edit menu/clear text age.png" title="clear text age"/> </p>
 
 ### Siblings/Spouses
 
+You can clear the siblings/Spouses text field by using Edit --> Clear text --> Siblings/Spouses or by using Alt + N keybind
+
 <p><img src ="doc images/Edit menu/clear text siblingsspouses.png" title="clear text siblingsspouses"/> </p>
 
 ### Parents/Children
 
+You can clear the Parents/Children text field by using Edit --> Clear text --> Parents/Children or by using Ctrl + N keybind
+
 <p><img src ="doc images/Edit menu/clear text parentschildren.png" title="clear text parentschildren"/> </p>
 
 ### Fare
+
+
+You can clear the fare text field by using Edit --> Clear text --> Fare or by using Alt+Z keybind
 
 <p><img src ="doc images/Edit menu/clear text fare.png" title="clear text fare"/> </p>
 
@@ -85,13 +97,20 @@ else an error message window pops up
 
 ### Sex
 
+
+You can reset the sex option field by using Edit --> Reset Options --> Sex or by using Alt+M keybind
+
 <p><img src ="doc images/Edit menu/reset option sex.png" title="reset option sex"/> </p>
 
 ### Ticket class
 
+You can reset the Ticket Class option field by using Edit --> Reset Options --> Ticket class or by using Ctrl+M keybind
+
 <p><img src ="doc images/Edit menu/reset option ticket class.png" title="reset option ticket class"/> </p>
 
 ### Embarkation
+
+You can reset the Embarkation option field by using Edit --> Reset Options --> Embarkation or by using Ctrl+K keybind
 
 <p><img src ="doc images/Edit menu/reset option embarkation.png" title="reset option embarkation"/> </p>
 
@@ -104,9 +123,6 @@ You can show info about the app by using menu About --> About or using Ctrl+i ke
 An informative message pops up
 
 <p><img src="doc images/About menu/about.png" title="about menu"/></p> 
-
-
-
 
 
 # Help menu
