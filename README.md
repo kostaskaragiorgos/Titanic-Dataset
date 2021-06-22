@@ -99,6 +99,9 @@ All project documentation is located in the `./doc`  folder.
   <li> Siblings/Spouses Alt + N </li>
   <li> Parents/Children Ctrl + N </li>
   <li> Fare Alt + Z </li>
+  <li> Sex Alt + M </li>
+  <li> Ticket class Ctrl + M </li>
+  <li> Embarkation Ctrl + K </li>
   <li> About Ctrl+I </li>
   <li> Help Ctrl+F1 </li>
 </ul>
