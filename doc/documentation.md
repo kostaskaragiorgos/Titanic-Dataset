@@ -25,6 +25,13 @@ an informative message pops up
 
 <p><img src ="doc images/File menu/successful file close.png" title="successful file close"/> </p>
 
+## Save file
+
+<p><img src ="doc images/File menu/save file.png" title="save file"/> </p>
+
+## Save to existed file
+
+<p><img src ="doc images/File menu/save to existed file.png" title="Save to existed file"/> </p>
 
 ## Exit
 
