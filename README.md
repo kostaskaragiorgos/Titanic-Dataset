@@ -93,7 +93,12 @@ All project documentation is located in the `./doc`  folder.
   <li> Save to existed file Alt+S </li>
   <li> Exit Alt+F4 </li>
   <li> Show Predictions Ctrl+F5 </li>
-  <li> Clear Ctrl+Z </li>
+  <li> Clear All Ctrl+Z </li>
+  <li> Name Ctrl+T </li>
+  <li> Age Alt+T </li>
+  <li> Siblings/Spouses Alt + N </li>
+  <li> Parents/Children Ctrl + N </li>
+  <li> Fare Alt + Z </li>
   <li> About Ctrl+I </li>
   <li> Help Ctrl+F1 </li>
 </ul>
