@@ -146,7 +146,10 @@ class Titanicsurvival():
             msg.showinfo("SUCCESS", "CSV FILE SAVED SUCCESSFULLY")
 
     def savetoexisted(self):
-        pass
+        if self.predictions == "":
+            msg.showerror("ERROR", "NO PREDICTIONS TO SAVE")
+        else:
+            pass
 
     def savepredictions(self):
         """ saves the predictions to a csv file"""
