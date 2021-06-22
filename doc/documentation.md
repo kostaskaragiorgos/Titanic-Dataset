@@ -27,6 +27,8 @@ an informative message pops up
 
 ## Save file
 
+You can save predictions to a new .csv file by using File --> Save file menu or by using the Ctrl+ S keybind 
+
 <p><img src ="doc images/File menu/save file.png" title="save file"/> </p>
 
 if there are no predictions to save an error window pops up
@@ -35,6 +37,9 @@ if there are no predictions to save an error window pops up
 
 
 ## Save to existed file
+
+
+You can save predictions to an existed .csv file by using File --> Save to existed file menu or by using the Alt + S keybind 
 
 <p><img src ="doc images/File menu/save to existed file.png" title="Save to existed file"/> </p>
 
