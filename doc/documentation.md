@@ -57,27 +57,43 @@ else an error message window pops up
 
 ## Clear All
 
+<p><img src ="doc images/Edit menu/Clear All.png" title="clear all"/> </p>
+
 ## Clear Text
 
 ### Name
 
+<p><img src ="doc images/Edit menu/clear text name.png" title="clear text name"/> </p>
 
 ### Age
 
+<p><img src ="doc images/Edit menu/clear text age.png" title="clear text age"/> </p>
+
 ### Siblings/Spouses
+
+<p><img src ="doc images/Edit menu/clear text siblingsspouses.png" title="clear text siblingsspouses"/> </p>
 
 ### Parents/Children
 
+<p><img src ="doc images/Edit menu/clear text parentschildren.png" title="clear text parentschildren"/> </p>
+
 ### Fare
+
+<p><img src ="doc images/Edit menu/clear text fare.png" title="clear text fare"/> </p>
 
 ## Reset Options
 
 ### Sex
 
+<p><img src ="doc images/Edit menu/reset option sex.png" title="reset option sex"/> </p>
+
 ### Ticket class
+
+<p><img src ="doc images/Edit menu/reset option ticket class.png" title="reset option ticket class"/> </p>
 
 ### Embarkation
 
+<p><img src ="doc images/Edit menu/reset option embarkation.png" title="reset option embarkation"/> </p>
 
 # About menu
 
