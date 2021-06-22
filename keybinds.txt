@@ -11,9 +11,17 @@ Show menu
 Show Predictions Ctrl+F5
 =========
 Edit menu
-=============
-Clear Ctrl+Z
-=============
+================
+Clear All Ctrl+Z
+=================
+Clear test sub menu
+====================
+Name Ctrl+T
+Age Alt+T
+Siblings/Spouses Alt + N
+Parents/Children Ctrl + N
+Fare Alt + Z
+============
 About menu
 ============
 About Ctrl+I
