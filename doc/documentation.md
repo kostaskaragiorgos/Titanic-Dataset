@@ -71,9 +71,12 @@ You can show the predictions  by using menu Show --> Predictions or using Ctrl+F
 
 An informative message window pops up
 
+<li><img src ="doc images/Show menu/predictions example.png" title="predictions example"/></p>
+
 else an error message window pops up
 
 <p><img src ="doc images/Show menu/no predictions.png" title="no predictions"/> </p>
+
 
 
 # Edit menu
