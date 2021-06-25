@@ -8,6 +8,22 @@ You can insert a .csv file using menu File --> Insert a csv file or using Ctrl+O
 
 <p><img src = "doc images/File menu/insert a csv.png" title="Insert file"/> </p>
 
+if a csv successfully imported an informative window pops up
+
+
+<p><img src = "doc images/File menu/csv successfully added.png" title="csv file added successfully"/> </p>
+
+if there is no csv imported an error window pops up
+
+
+<p><img src = "doc images/File menu/no csv imported.png" title="no csv imported"/> </p>
+
+if there is already a csv file imported an error window pops up
+
+
+<p><img src = "doc images/File menu/csv is already open.png" title="Insert file"/> </p>
+
+
 ## Close file
 
 You can close a .csv file using menu File --> Close file or using Ctrl+F4 keybind
