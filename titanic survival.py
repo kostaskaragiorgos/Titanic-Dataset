@@ -1,9 +1,9 @@
+"""titanic survival"""
 from tkinter import Menu, messagebox as msg, filedialog, Tk, Label, Text, Button, END, StringVar, OptionMenu
-from tkinter.constants import E
 from tkinter.messagebox import askyesno
+import pickle
 import pandas as pd
 import numpy as np
-import pickle
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 
@@ -12,9 +12,11 @@ def aboutmenu():
     msg.showinfo("About", "Titanic survival \nVersion 1.0")
 
 def helpmenu():
+    """help menu function"""
     msg.showinfo("Help", "Insert a csv file to predict the titanic survivals")
 
 class Titanicsurvival():
+    """ titanic survival class"""
     def __init__(self, master):
         self.master = master
         self.master.title("Titanic Survival")
@@ -88,11 +90,11 @@ class Titanicsurvival():
         self.file_menu.add_command(label="Close file", accelerator='Ctrl+F4', command=self.closefile)
         self.file_menu.add_command(label="Save file", accelerator='Ctrl+S', command=self.savepredictions)
         self.file_menu.add_command(label="Save to existed file", accelerator='Alt+S', command=self.savetoexisted)
-        self.file_menu.add_command(label="Exit", accelerator= 'Alt+F4',command=self.exitmenu)
-        self.menu.add_cascade(label = "File", menu=self.file_menu)
+        self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
+        self.menu.add_cascade(label="File", menu=self.file_menu)
 
         self.show_menu = Menu(self.menu, tearoff=0)
-        self.show_menu.add_command(label="Show Predictions", accelerator='Ctrl+ F5',command=self.showpredictions)
+        self.show_menu.add_command(label="Show Predictions", accelerator='Ctrl+ F5', command=self.showpredictions)
         self.menu.add_cascade(label="Show", menu=self.show_menu)
         
         self.edit_menu = Menu(self.menu, tearoff=0)
@@ -114,7 +116,7 @@ class Titanicsurvival():
         self.menu.add_cascade(label="Edit", menu=self.edit_menu)
 
         self.about_menu = Menu(self.menu, tearoff=0)
-        self.about_menu.add_command(label="About", accelerator='Ctrl+I', command= aboutmenu)
+        self.about_menu.add_command(label="About", accelerator='Ctrl+I', command=aboutmenu)
         self.menu.add_cascade(label="About", menu=self.about_menu)
         
         self.help_menu = Menu(self.menu, tearoff=0)
@@ -158,8 +160,8 @@ class Titanicsurvival():
             msg.showerror("ERROR", "NO PREDICTIONS TO SAVE")
         else:
             filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
-                                                                filetypes=(("csv files", "*.csv"),
-                                                                            ("all files", "*.*")))
+                                                        filetypes=(("csv files", "*.csv"),
+                                                                   ("all files", "*.*")))
             self.checktosave(filenamesave)
 
 
@@ -195,7 +197,7 @@ class Titanicsurvival():
         """
         self.importeddf['Age'] = self.importeddf['Age'].fillna(self.importeddf['Age'].mean())
         self.importeddf['Fare'] = self.importeddf['Fare'].fillna(self.importeddf['Fare'].mean())
-        agelabels = ['child','adult','old']
+        agelabels = ['child', 'adult', 'old']
         self.importeddf['age_group'] = pd.cut(self.importeddf['Age'], bins=3, labels=agelabels)
         self.importeddf['age_group'] = self.importeddf['age_group'].fillna('adult')
         labelsfare = ['cheap', 'normal', 'expensive']
@@ -253,7 +255,7 @@ class Titanicsurvival():
             msg.showinfo("SUSSESS", "YOUR CSV FILE HAS SUCCESFULLY CLOSED")
     
 
-    def checksetoptions(self,userinput):
+    def checksetoptions(self, userinput):
         """ checks the user's options """
         if self.embarkedstring.get() != "Select a Port of Embarkation" and self.sexstring.get() != "Select a Sex" and self.pclassstring.get() != "Select a Ticket class":
             userinput.append([str(self.embarkedstring.get()), str(self.sexstring.get()), str(self.pclassstring.get())])
@@ -278,9 +280,9 @@ class Titanicsurvival():
             msg.showerror("ERROR", "PREDICTIONS HAVE ALREADY BE DONE")
         elif self.filename != "":
             X = self.fixinsertedfile()
-            self.predictions= self.loadedmodel.predict(X).tolist()
+            self.predictions = self.loadedmodel.predict(X).tolist()
             answer = askyesno(title='Save predictions',
-                    message = 'Do you want to save the predictions?')
+                              message='Do you want to save the predictions?')
             if answer:
                 self.savepredictions()
             else:
@@ -291,7 +293,7 @@ class Titanicsurvival():
             self.checknumbers(userinput)
 
     
-    def clear(self, toclear=None, textflag = True, text  = ""):
+    def clear(self, toclear=None, textflag=True, text=""):
         """ reset button function """
         if toclear is None:
             self.pclassstring.set("Select a Ticket class")
@@ -303,7 +305,7 @@ class Titanicsurvival():
             self.faretext.delete(1.0, END)
             self.nofparentstext.delete(1.0, END)
         elif textflag:
-            toclear.delete(1.0,END)
+            toclear.delete(1.0, END)
         else:
             toclear.set(str(text))
 
